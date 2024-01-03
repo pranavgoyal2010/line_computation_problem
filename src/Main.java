@@ -2,23 +2,40 @@ public class Main {
     public static void main(String[] args){
 
         /**
-         * This is UC 2 where we need to check the equality of two lines.
+         * This is UC 4 where we need to OOP to check equality of two lines and also compare the
+         * length of the two lines
          * */
 
         Point point1 = new Point(2,3);
-        Point point2 = new Point(7,9);
+        Point point2 = new Point(9,9);
 
         Point point3 = new Point(2,3);
         Point point4 = new Point(8,9);
 
-        double length1 = Math.sqrt(Math.pow(point2.getX()-point1.getX(), 2) + Math.pow(point2.getY()-point1.getY(), 2));
-        double length2 = Math.sqrt(Math.pow(point4.getX()-point3.getX(), 2) + Math.pow(point4.getY()-point3.getY(), 2));
+        Line line1 = new Line(point1, point2);
+        Line line2 = new Line(point3, point4);
 
-        if(length1==length2)
+
+        if(line1.equals(line2))
+        {
             System.out.println("Lines are equal");
-        else if(length1>length2)
-            System.out.println("Line 1 is greater than Line 2");
+        }
+        else{
+            System.out.println("Lines are not equal");
+        }
+
+
+        if(line1.compareTo(line2)==0)
+        {
+            System.out.println("Lines are equal in length");
+        }
+        else if(line1.compareTo(line2)<0)
+        {
+            System.out.println("Line1 is smaller than Line2 in length");
+        }
         else
-            System.out.println("Line 1 is lesser than Line 2");
+        {
+            System.out.println("Line1 is greater than Line2 in length");
+        }
     }
 }
